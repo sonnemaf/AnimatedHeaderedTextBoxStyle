@@ -1,36 +1,53 @@
-﻿<Page x:Class="App121.MainPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:local="using:App121"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+      x:Class="App121.MainPage"
       mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel Width="300"
-                    Margin="0,12"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Center">
+    <StackPanel Width="300"
+                Margin="0,0,60,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center">
 
-            <TextBox Header="Firstname"
-                     Style="{StaticResource AnimatedHeaderedTextBoxStyle}"
-                     IsSpellCheckEnabled="False"
-                     InputScope="PersonalFullName"/>
+        <TextBox Header="Firstname"
+                 Style="{StaticResource AnimatedHeaderedTextBoxStyle}"
+                 IsSpellCheckEnabled="False"
+                 InputScope="PersonalFullName">
+            <Interactivity:Interaction.Behaviors>
+                <local:MoveHeaderOnFocusBehavior />
+            </Interactivity:Interaction.Behaviors>
+        </TextBox>
 
-            <TextBox Header="Lastname"
-                     Style="{StaticResource AnimatedHeaderedTextBoxStyle}"
-                     IsSpellCheckEnabled="False"
-                     Margin="0,8"
-                     InputScope="PersonalFullName" />
+        <TextBox Header="Lastname"
+                 Style="{StaticResource AnimatedHeaderedTextBoxStyle}"
+                 IsSpellCheckEnabled="False"
+                 Margin="0,8"
+                 InputScope="PersonalFullName">
+            <Interactivity:Interaction.Behaviors>
+                <local:MoveHeaderOnFocusBehavior />
+            </Interactivity:Interaction.Behaviors>
+        </TextBox>
 
-            <TextBox Header="E-mail"
-                     Style="{StaticResource AnimatedHeaderedTextBoxStyle}"
-                     IsSpellCheckEnabled="False"
-                     InputScope="EmailNameOrAddress" />
+        <TextBox Header="E-mail"
+                 x:Name="textBoxEmail"
+                 Style="{StaticResource AnimatedHeaderedTextBoxStyle}"
+                 IsSpellCheckEnabled="False"
+                 Text="fons.sonnemans@reflectionit.nl"
+                 InputScope="EmailNameOrAddress">
+            <Interactivity:Interaction.Behaviors>
+                <local:MoveHeaderOnFocusBehavior />
+            </Interactivity:Interaction.Behaviors>
+        </TextBox>
 
-            <Button Content="Next"
-                    Margin="0,16,0,0" />
-        </StackPanel>
+        <Button Content="Next"
+                Click="Button_Click"
+                Margin="0,16,0,0" />
 
-    </Grid>
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+              Height="640"
+              Margin="0,0,-60,0" />
+    </StackPanel>
 </Page>

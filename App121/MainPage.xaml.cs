@@ -26,5 +26,9 @@ namespace App121
         {
             this.InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            textBoxEmail.Text = "fons.sonnemans@reflectionit.nl";
+        }
     }
 }

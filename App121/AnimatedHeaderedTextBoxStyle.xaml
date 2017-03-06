@@ -303,7 +303,7 @@
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="HeaderStates">
                                 <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0:0:0.35">
+                                    <VisualTransition GeneratedDuration="0:0:0.25">
                                         <VisualTransition.GeneratedEasingFunction>
                                             <CircleEase EasingMode="EaseInOut" />
                                         </VisualTransition.GeneratedEasingFunction>
@@ -395,6 +395,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-
+    
 </ResourceDictionary>
